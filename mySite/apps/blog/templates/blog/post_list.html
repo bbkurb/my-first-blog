@@ -1,22 +1,24 @@
-<html>
-    <head>
-        <title>Bahrom Kurbanovs Blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Bahrom Kurbanovs Blog</a></h1>
-        </div>
+{% extends 'index.html' %}
 
-        <div>
-            <p>published: 07/11/21, 19:08</p>
-            <h2><a href="">My first post</a></h2>
-            <p>I'm tryins to learn Django, I hope  iwill be a best programmer soon!</p>
-        </div>
 
-        <div>
-            <p>published: 07/11/21, 19:12</p>
-            <h2><a href="">My second post</a></h2>
-            <p>this is my second post on pythonAnywhere!</p>
-        </div>
-    </body>
-</html>
+{% block title %}Post List{% endblock %}
+
+
+{% block content %} 
+
+        {% if posts %}
+
+                {% for a in posts %}
+                        <div>
+                                <a href="#">{{a.title}}</a><br>
+                                <p>{{ post.text }}</p>
+                                <p>published: {{a.published_date}}</p><br>
+
+                        </div>
+                {% endfor %}
+
+        {% else %}
+                Posts not found
+        {% endif %}
+
+{% endblock %}

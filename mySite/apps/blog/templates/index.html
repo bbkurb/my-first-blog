@@ -8,20 +8,13 @@
 	
 	{% block content %}
 
-		{% if posts %}
-
-		        {% for a in posts %}
-		                <div>
-		                        <a href="#">{{a.title}}</a><br>
-		                        <p>{{ post.text }}</p>
-		                        <p>published: {{a.published_date}}</p><br>
-
-		                </div>
-		        {% endfor %}
-
-		{% else %}
-		        Posts not found
-		{% endif %}
+		{% for a in posts %}
+		        <div>
+		                <a href="#">{{a.title}}</a><br>
+		                <p>{{ post.text }}</p>
+		                <p>published: {{a.published_date}}</p><br>
+		        </div>
+		{% endfor %}
 
 	{% endblock %}
 

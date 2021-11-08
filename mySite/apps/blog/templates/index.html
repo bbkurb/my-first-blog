@@ -6,7 +6,24 @@
 <body>
 	<h1>Bahrom Kurbanov's Django Web Project</h1>
 	
-	{% block content %}{% endblock %}
+	{% block content %}
+
+		{% if posts %}
+
+		        {% for a in posts %}
+		                <div>
+		                        <a href="#">{{a.title}}</a><br>
+		                        <p>{{ post.text }}</p>
+		                        <p>published: {{a.published_date}}</p><br>
+
+		                </div>
+		        {% endfor %}
+
+		{% else %}
+		        Posts not found
+		{% endif %}
+
+	{% endblock %}
 
 </body>
 </html>

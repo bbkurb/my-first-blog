@@ -6,17 +6,12 @@
 <body>
 	<h1>Bahrom Kurbanov's Django Web Project</h1>
 	
-	{% block content %}
-
-		{% for a in posts %}
-		        <div>
-		                <a href="#">{{a.title}}</a><br>
-		                <p>{{ post.text }}</p>
-		                <p>published: {{a.published_date}}</p><br>
-		        </div>
-		{% endfor %}
-
-	{% endblock %}
+	{% for post in posts %}
+	    <div>
+	        <h2><a href="">{{ post.title }}</a></h2>
+	        <p>{{ post.text|linebreaksbr }}</p>
+	    </div>
+	{% endfor %}
 
 </body>
 </html>

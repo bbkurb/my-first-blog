@@ -1,0 +1,14 @@
+body {
+	background: #777;
+	color: #fff;
+}
+
+.page-header {
+	font-family: 'Shadows Into Light';
+	
+}
+
+a, a:hover {
+	color: #fff;
+	font-family: 'Shadows Into Light';
+}

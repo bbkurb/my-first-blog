@@ -1,24 +1,15 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 
 {% block title %}Post List{% endblock %}
 
 
-{% block content %} 
 
-        {% if posts %}
-
-                {% for a in posts %}
-                        <div>
-                                <a href="#">{{a.title}}</a><br>
-                                <p>{{ post.text }}</p>
-                                <p>published: {{a.published_date}}</p><br>
-
-                        </div>
-                {% endfor %}
-
-        {% else %}
-                Posts not found
-        {% endif %}
-
+{% block content %}
+        {% for post in posts %}
+                <div>
+                        <h1><a href="#">{{ post.title }}</a></h1>
+                        <p>published: {{ post.published_date }}</p>
+                </div>
+        {% endfor %}
 {% endblock %}

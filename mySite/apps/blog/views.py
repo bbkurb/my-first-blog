@@ -7,4 +7,4 @@ from .models import Post
 
 def index(request):
     posts = Post.objects.order_by('-published_date')[:10]
-    return render(request, 'index.html', {'posts': posts})
+    return render(request, 'base.html', {'posts': posts})
